@@ -1,6 +1,6 @@
 version: '3'
 services:
   web:
-    build: .
+    image: webssh
     ports:
-    - "8888:8888"
+    - "4433:4433"

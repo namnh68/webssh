@@ -46,10 +46,8 @@ def main():
     app = make_app(make_handlers(loop, options), get_app_settings(options))
     ssl_ctx = get_ssl_context(options)
     server_settings = get_server_settings(options)
-    app_listen(app, options.port, options.address, server_settings)
-    if ssl_ctx:
-        server_settings.update(ssl_options=ssl_ctx)
-        app_listen(app, options.sslport, options.ssladdress, server_settings)
+    server_settings.update(ssl_options=ssl_ctx)
+    app_listen(app, options.sslport, options.ssladdress, server_settings)
     loop.start()
 
 

@@ -102,6 +102,7 @@ wssh.send('ls -l');
 
 Start up the app
 ```
+docker build -t webssh .
 docker-compose up
 ```
 
